@@ -11,3 +11,38 @@ Feature: Try first Cucumber scenario
       | password | Qwerty!2345  |
     And we are pressing submit button
     Then we are on the step2 page
+
+
+  Scenario: New user creation check
+    Given client:
+      | name  | Vasja        |
+      | iin   | 123456789    |
+      | age   | 30           |
+      | mail  | test@test.lv |
+      | phone | +3712345678  |
+
+    And income data is:
+      | amount   | 3000.00      |
+      | employer | SomeEmployer |
+      | expenses | 1000.00      |
+
+    When we are registering this client
+    And checking it in ERP
+
+    Then client data is correct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
